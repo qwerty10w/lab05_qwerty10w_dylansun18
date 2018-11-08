@@ -40,7 +40,8 @@ double distanceBetween(Point p, Point q) {
 
 
 void initPoint(struct Point *p, double xVal, double yVal) {
-  //return; //@@@ for a void function, the stub is just a bare return that does nothing
+	(*p).x = xVal;
+	(*p).y = yVal;
 }
 
 
@@ -72,6 +73,20 @@ bool pointsApproxEqual(Point p1,
 }
 
 bool boxesApproxEqual(Box b1, Box b2, double tolerance) {
+	bool approxEqual = true;
+	if(fabs(b1.ul.x - b2.ul.x) > tolerance){
+		approxEqual = false;
+	}
+	if(fabs(b1.ul.y - b2.ul.y) > tolerance){
+		approxEqual = false;
+	}
+	if(fabs(b1.width - b2.width) > tolerance){
+		approxEqual = false;
+	}
+	if(fabs(b1.height - b2.height) > tolerance){
+		approxEqual = false;
+	}
+	return approxEqual;
 
   // Two boxes are approximately equal if their upper left corners are approximately 
   // equal, and if their corresponding widths and height are approx equal.

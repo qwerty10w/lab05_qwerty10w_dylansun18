@@ -10,6 +10,9 @@ int main() {
   struct Point p1,p2,p3,p4;
   struct Point p1Expected,p2Expected,p3Expected,p4Expected;
 
+  //precondition: Pass parameters of a declared Point struct, and two doubles that represent x and y values
+  //postcondition: The Point will be initialized with the x and y values
+
   initPoint(&p1,3.0,4.0);   p1Expected.x = 3.0;    p1Expected.y = 4.0; 
   assertTrue(pointsApproxEqual(p1,p1Expected),"pointsApproxEqual(p1,p1Expected)");
 
