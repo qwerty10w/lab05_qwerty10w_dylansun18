@@ -40,7 +40,7 @@ string pointToString(Point p, int precision) {
 string boxToString(Box b, int precision) {
   ostringstream oss;
   oss << setprecision(precision);
-  oss << "ul=(" << b.ul.x << "," << b.ul.y << "), w=" << b.width << ", h=" << b.height;
+  oss << "ul=(" << b.ul.x << "," << b.ul.y << "),w=" << b.width << ",h=" << b.height;
   return oss.str();
 }
  
